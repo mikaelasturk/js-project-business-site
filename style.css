@@ -1,0 +1,38 @@
+/*Mobile <667
+Tablet >688 <1024
+Desktop >1024*/
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: #F5C9B0;
+  color: #1C352D;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #A6B28B;
+}
+
+main {
+  flex: 1;
+}
+
+/*Tablet responsive design*/
+@media (min-width: 667px) and (max-width: 1024px) {}
+
+/*Desktop responsive design*/
+@media (min-width: 1025px) {
+  header {
+    display: flex;
+  }
+}
