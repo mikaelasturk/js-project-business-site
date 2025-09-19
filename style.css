@@ -2,17 +2,19 @@
 Tablet >688 <1024
 Desktop >1024*/
 
-html,
-body {
+* {
   height: 100%;
+  max-width: 100%;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  background-color: #F5C9B0;
-  color: #1C352D;
+  background-color: #6B8E62;
+  /*background-color: #FDFBF7;*/
+  color: #2E2E2E;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -20,19 +22,74 @@ body {
 }
 
 header {
-  background-color: #A6B28B;
+  /* background-color: ;
+  color: ; */
+  display: flex;
+  flex-direction: column;
+}
+
+.topnav {
+  padding: 30px 10px;
+}
+
+.button-nav {
+  background-color: #6B8E62;
+  border-radius: 3%; 
+  padding: 20px;
+  margin: 0 0 0px;
+}
+
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 20px 10px 0 10px;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 10px;
+  padding-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #6B8E62;
 }
 
 main {
   flex: 1;
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: #6B8E62;
+  gap: 20px;
+  padding: 20px;
+
+}
+ 
+.card {
+  background-color: #FDFBF7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
 /*Tablet responsive design*/
-@media (min-width: 667px) and (max-width: 1024px) {}
+@media (min-width: 667px) and (max-width: 1024px) {
+
+}
 
 /*Desktop responsive design*/
 @media (min-width: 1025px) {
-  header {
-    display: flex;
-  }
+  
 }
