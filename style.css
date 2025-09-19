@@ -2,7 +2,7 @@
 Tablet >688 <1024
 Desktop >1024*/
 
-* {
+body {
   height: 100%;
   max-width: 100%;
   margin: 0;
