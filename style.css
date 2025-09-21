@@ -2,43 +2,76 @@
 Tablet >688 <1024
 Desktop >1024*/
 
-body {
-  height: 100%;
-  max-width: 100%;
-  margin: 0;
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: sans-serif;
-  line-height: 1.5;
-  background-color: #6B8E62;
-  /*background-color: #FDFBF7;*/
-  color: #2E2E2E;
-  text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  line-height: 1.5;
+  background-color: #6B8E62;
+  color: #2E2E2E;
+  text-align: center;
 }
 
 header {
-  /* background-color: ;
-  color: ; */
   display: flex;
   flex-direction: column;
 }
 
-.topnav {
-  padding: 30px 10px;
+.sticky-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav { 
+  display: none; 
+  flex-direction: column; 
+  gap: 8px; 
 }
 
-.button-nav {
+.nav-wrap[open] .nav { 
+  display: flex; 
+  position: fixed;
+  inset: 0;
   background-color: #6B8E62;
-  border-radius: 3%; 
-  padding: 20px;
-  margin: 0 0 0px;
+  padding: 100px 20px 0 20px;
+  gap: 40px;
+  z-index: 9999;
 }
 
+.hamburger { 
+  background-color: transparent;
+  cursor: pointer;  
+  color: #2E2E2E; 
+  padding: 8px; 
+  text-align: right;
+}
+
+summary { 
+  font-size: 2rem;
+}
+
+.nav a {  
+  text-decoration: none; 
+  padding: 6px 0;
+  background-color: #efe0c3;
+  color: #2b3a28;
+  margin: 0 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.nav a:hover { 
+  background-color :#2b3a28;
+  color: #efe0c3;
+}
 
 .hero-image {
   width: 100%;
@@ -47,14 +80,13 @@ header {
 }
 
 h1 {
-  font-size: 1.5rem;
-  margin: 20px 10px 0 10px;
+  font-size: 2rem;
+  margin: 30px;
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 10px;
-  padding-bottom: 20px;
 }
 
 h3 {
@@ -69,27 +101,144 @@ main {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   background-color: #6B8E62;
+  margin: 20px;
+  padding: 0 20px;
   gap: 20px;
-  padding: 20px;
-
 }
  
 .card {
-  background-color: #FDFBF7;
+  background-color: #efe0c3;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
+p {
+  margin-bottom: 15px;
+}
+
+form {
+  background-color: #efe0c3;
+  margin: 20px 20px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  justify-content: center;
+}
+
+label {
+  display: flex; 
+  flex-direction: column;
+}
+
+span{
+  text-align: center;
+} 
+
+input, select {
+  border: 1.5px solid #ccc;
+  margin-bottom: 5px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-nav > a {
+  color: inherit;
+}
+
+.bottom-nav > a:hover {
+  color:#efe0c3;
+}
 
 /*Tablet responsive design*/
-@media (min-width: 667px) and (max-width: 1024px) {
+@media (min-width: 667px) {
 
+ .card-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  form { 
+    margin: 20px auto;
+  }
+
+  label {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between; 
+  }
+
+  span{
+    text-align: right;
+    width: 33%;
+    margin-right: 5px;
+  }
+
+  input, select {
+    width: 100%;
+  }
+
+  .bottom-form-section label {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bottom-form-section span {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .bottom-form-section input, .bottom-form-section select {
+    width: 100%;
+    height: auto;
+    text-wrap: wrap;
+  }
 }
 
 /*Desktop responsive design*/
 @media (min-width: 1025px) {
-  
+  .nav-wrap { 
+    display: none; 
+  }
+
+  .nav { 
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: row;
+    position: sticky;
+    inset: 0;
+    background: #6B8E62;
+    justify-content: center;
+    padding: 10px;
+  }   
+
+  .nav a {  
+    text-decoration: none; 
+    padding: 6px 0;
+    background-color: #efe0c3;
+    color: #2b3a28;
+    margin: 0px;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 10px 40px;
+  }
+
+  .nav a:hover { 
+    background-color :#2b3a28;
+    color: #efe0c3;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat (4, 1fr); 
+  }
 }
